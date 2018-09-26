@@ -16,13 +16,11 @@ example = Label(win,font=('times', 28, 'bold'), background='blue', foreground='w
 example.pack(fill=BOTH, expand=1)
 e1=Entry(win)
 e1.pack()
-bt=Button(win, text='Set alarm', command=Setal).pack()      #Button to set alarm time
 def Setal():
     t=e1.get()
     if(t==time.strftime('%H:%M:%S')):
         os.system('start alarm.mp3')                        #Plays mp3 file as alarm
-
-
+bt=Button(win, text='Set alarm', command=Setal).pack()      #Button to set alarm time
 def passtime():                                             #Time change in clock
     a = time.strftime('%H:%M:%S')
     if a != example["text"]:
